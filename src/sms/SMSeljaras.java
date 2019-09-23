@@ -11,8 +11,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,36 +18,41 @@ import java.util.logging.Logger;
  */
 public class SMSeljaras {
 
-    
     private List<SMSagy> memoria;
-    
+
     public SMSeljaras() {
         this.memoria = new ArrayList<>();
     }
-    
+
     public List<SMSagy> getMemoria() {
         return memoria;
     }
-    private void megnyito() throws IOException{
-        Integer hosszusag=0;
+
+    public void megnyito() throws IOException {
+        Integer hosszusag = 0;
         String egysor;
         String ketsor;
-        String[] ideiglenes=new String[3];
+        String[] ideiglenes = new String[3];
         try {
-            FileReader buta=new FileReader("sms.txt");
-            BufferedReader okos= new BufferedReader(buta);
-            hosszusag=Integer.parseInt(okos.readLine());
+            FileReader buta = new FileReader("sms.txt");
+            BufferedReader okos = new BufferedReader(buta);
+            hosszusag = Integer.parseInt(okos.readLine());
             for (int i = 0; i < hosszusag; i++) {
-                egysor=okos.readLine();
-                ketsor=okos.readLine();
-                ideiglenes=egysor.split(" ");
-                SMSagy agy=new SMSagy(i, i, hosszusag, ketsor);
-                
+                egysor = okos.readLine();
+                ketsor = okos.readLine();
+                ideiglenes = egysor.split(" ");
+                SMSagy agy = new SMSagy(Integer.parseInt(ideiglenes[0]), Integer.parseInt(ideiglenes[1]), Integer.parseInt(ideiglenes[2]), ketsor);
+                memoria.add(agy);
             }
             buta.close();
+            for (int i = 0; i < memoria.size(); i++) {
+                System.out.println(memoria.get(i).toString());
+            }
+
         } catch (FileNotFoundException ex) {
             System.out.println("A file nem található!");
         }
+
     }
-    
+
 }

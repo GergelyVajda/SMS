@@ -53,4 +53,9 @@ public class SMSagy {
         this.telefonszam = telefonszam;
         this.uzenet = uzenet;
     }
+
+    @Override
+    public String toString() {
+        return " " + ora + " " + perc + " " + telefonszam + " " + uzenet;
+    }
 }
