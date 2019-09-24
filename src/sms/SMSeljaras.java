@@ -51,6 +51,7 @@ public class SMSeljaras {
 
     }
     public void masodikFeladat(){
+        System.out.println("-Második feladat-");
         Integer legnagyobbOra=0;
         Integer legnagyobbPerc=0;
         for (int i = 0; i < memoria.size(); i++) {
@@ -68,6 +69,10 @@ public class SMSeljaras {
                 System.out.println(memoria.get(i).getUzenet());
             }
         }
+    }
+    public void harmadikFeladat(){
+        System.out.println("-Harmadik feladat-");
+        
     }
 
 }
