@@ -23,7 +23,7 @@ public class SMS {
         SMSeljaras eljaras=new SMSeljaras();
         try {
             eljaras.megnyito();
-            
+            eljaras.masodikFeladat();
         } catch (IOException ex) {
             System.out.println("Az eljárásban hiba!");
         }

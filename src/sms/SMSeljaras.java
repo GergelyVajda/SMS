@@ -45,14 +45,29 @@ public class SMSeljaras {
                 memoria.add(agy);
             }
             buta.close();
-            for (int i = 0; i < memoria.size(); i++) {
-                System.out.println(memoria.get(i).toString());
-            }
-
         } catch (FileNotFoundException ex) {
             System.out.println("A file nem található!");
         }
 
+    }
+    public void masodikFeladat(){
+        Integer legnagyobbOra=0;
+        Integer legnagyobbPerc=0;
+        for (int i = 0; i < memoria.size(); i++) {
+                if (legnagyobbOra<memoria.get(i).getOra()) {
+                legnagyobbOra=memoria.get(i).getOra();
+            }
+       }
+        for (int i = 0; i < memoria.size(); i++) {
+                if (legnagyobbPerc<memoria.get(i).getPerc()&&legnagyobbOra.equals(memoria.get(i).getOra())) {
+                legnagyobbPerc=memoria.get(i).getPerc();
+            }
+       }
+        for (int i = 0; i < memoria.size(); i++) {
+            if (legnagyobbOra.equals(memoria.get(i).getOra())&&legnagyobbPerc.equals(memoria.get(i).getPerc())) {
+                System.out.println(memoria.get(i).getUzenet());
+            }
+        }
     }
 
 }
