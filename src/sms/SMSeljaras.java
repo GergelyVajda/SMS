@@ -50,29 +50,54 @@ public class SMSeljaras {
         }
 
     }
-    public void masodikFeladat(){
+
+    public void masodikFeladat() {
         System.out.println("-Második feladat-");
-        Integer legnagyobbOra=0;
-        Integer legnagyobbPerc=0;
+        Integer legnagyobb = 0;
+        Integer legnagyobbHely = 0;
         for (int i = 0; i < memoria.size(); i++) {
-                if (legnagyobbOra<memoria.get(i).getOra()) {
-                legnagyobbOra=memoria.get(i).getOra();
-            }
-       }
-        for (int i = 0; i < memoria.size(); i++) {
-                if (legnagyobbPerc<memoria.get(i).getPerc()&&legnagyobbOra.equals(memoria.get(i).getOra())) {
-                legnagyobbPerc=memoria.get(i).getPerc();
-            }
-       }
-        for (int i = 0; i < memoria.size(); i++) {
-            if (legnagyobbOra.equals(memoria.get(i).getOra())&&legnagyobbPerc.equals(memoria.get(i).getPerc())) {
-                System.out.println(memoria.get(i).getUzenet());
+            if (memoria.get(i).getOra() * 60 + memoria.get(i).getPerc() > legnagyobb) {
+                legnagyobb = memoria.get(i).getOra() * 60 + memoria.get(i).getPerc();
+                legnagyobbHely = i;
             }
         }
+        System.out.println(memoria.get(legnagyobbHely).getUzenet());
     }
-    public void harmadikFeladat(){
+
+    public void harmadikFeladat() {
         System.out.println("-Harmadik feladat-");
+        Integer hosszusag = 0;
+        Integer rovidseg = Integer.MAX_VALUE;
+        Integer leghosszabbHely = 0;
+        Integer legrovidebbHely = 0;
+        for (int i = 0; i < memoria.size(); i++) {
+
+            if (memoria.get(i).getUzenet().length() > hosszusag) {
+                hosszusag = memoria.get(i).getUzenet().length();
+                leghosszabbHely = i;
+            }
+        }
+        for (int i = 0; i < memoria.size(); i++) {
+            
+            if (memoria.get(i).getUzenet().length() < rovidseg) {
+                rovidseg = memoria.get(i).getUzenet().length();
+                legrovidebbHely= i;
+            }
+        }
+        System.out.println("Leghosszabb: ");
+        System.out.println(memoria.get(leghosszabbHely).getOra()+" "+memoria.get(leghosszabbHely).getPerc()+" "+memoria.get(leghosszabbHely).getTelefonszam());
+        System.out.println(memoria.get(leghosszabbHely).getUzenet());
+        System.out.println("Legrövidebb: ");
+        System.out.println(memoria.get(legrovidebbHely).getOra()+" "+memoria.get(legrovidebbHely).getPerc()+" "+memoria.get(legrovidebbHely).getTelefonszam());
+        System.out.println(memoria.get(legrovidebbHely).getUzenet());
+    }
+    public void negyedikFeladat(){
         
+        for (int i = 0; i < memoria.size(); i++) {
+            if () {
+                
+            }
+        }
     }
 
 }
