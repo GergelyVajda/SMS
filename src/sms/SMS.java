@@ -25,6 +25,7 @@ public class SMS {
             eljaras.megnyito();
             eljaras.masodikFeladat();
             eljaras.harmadikFeladat();
+            eljaras.negyedikFeladat();
         } catch (IOException ex) {
             System.out.println("Az eljárásban hiba!");
         }
